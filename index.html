@@ -30,6 +30,7 @@
     .timeline-panel h4 {
       margin: 0 0 8px 0;
       font-size: 14px;
+      text-align: center;
       color: #222;
     }
 
@@ -348,7 +349,7 @@
             fillOpacity: 0.20,
             fillColor: 'tan',
             opacity: 1,
-            color: 'brown',
+            color: 'tan',
             weight: 1.5
           };
         } else {
@@ -477,12 +478,11 @@
       L.DomEvent.on(container, 'touchstart touchmove touchend', L.DomEvent.stopPropagation);
 
       container.innerHTML = `
-    <h4>Filter by Year Built</h4>
+    <h4>As of <span id="yearValue" class="year-readout">${selectedYear}</span></h4>
     <div class="slider-container">
       <button id="prevYearBtn" class="step-btn" title="Previous Year">&minus;</button>
       <input id="timelineSlider" type="range" min="1800" max="2026" step="1" value="${selectedYear}">
       <button id="nextYearBtn" class="step-btn" title="Next Year">&plus;</button>
-      <span id="yearValue" class="year-readout">${selectedYear}</span>
     </div>
     <div style="font-size: 11px; color: #666; margin-top: 6px;">
       Showing parcels built after <span id="hintYear">${selectedYear}</span>
@@ -534,6 +534,24 @@
 
     map.fitBounds(geojsonLayer.getBounds());
 
+    // Check if URL has query params, e.g., index.html?year=1924&parcel=5-14-12-0
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetYear = urlParams.get('year');
+    const targetParcel = urlParams.get('parcel');
+
+    if (targetYear) {
+      setYear(parseInt(targetYear, 10));
+    }
+
+    if (targetParcel && geojsonLayer) {
+      // Find the target parcel layer and open its popup automatically
+      geojsonLayer.eachLayer(function(layer) {
+        if (layer.feature && layer.feature.properties && layer.feature.properties.ParcelID === targetParcel) {
+          map.fitBounds(layer.getBounds(), { maxZoom: 18 });
+          layer.openPopup();
+        }
+      });
+    }
   </script>
 
 </body>

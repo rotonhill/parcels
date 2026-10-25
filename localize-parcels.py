@@ -149,7 +149,7 @@ def main():
     in_bounds_features = [f for f in features if parcel_in_bounds(f, region)]
     sys.stderr.write(f"Total features with invalid geometry: {total_invalid_geometry}\n")
     sys.stderr.write(f"Features within bounds: {len(in_bounds_features)}\n")
-    
+
     # Keep only the properties you actually use in the map
     keys_to_keep = {"YearBuilt", "NAME", "ParcelID", "Location"}
     for f in in_bounds_features:
@@ -158,6 +158,16 @@ def main():
     # Sequential duplicate collapse (condos/shared footprints)
     final_features = deduplicate_consecutive(in_bounds_features)
 
+    # Remove some features
+    EXCLUDED_PARCEL_IDS = {
+        "6-32C-26-0",   # Railroad tracks near Highland
+        "6-1D-18-201",  # Railroad tracks near Rowayton Station
+        "6-27-9-0",     # Next to Chalmers Pond
+    }
+    final_features = [
+        f for f in final_features if
+        str((f.get("properties") or {}).get("ParcelID", "")).strip() not in EXCLUDED_PARCEL_IDS]
+    
     # Fill in some properties by default
     for feat in final_features:
         props = feat.setdefault("properties", {})

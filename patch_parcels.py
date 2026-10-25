@@ -30,6 +30,39 @@ ADDED_FEATURES = [{
             [-73.4345108, 41.1019328],
             [-73.4359055, 41.1018789]]]
     }
+},
+{
+    "type":"Feature",
+    "properties": {
+        "ParcelID":"TraendlyGreenhouses",
+        "YearBuilt": 1912,
+        "valid_from": 1912,
+        "valid_to": 1960,
+        "Location": "Traendly & Schenck Greenhouses",
+        "Notes": f"""
+                 Traendly & Schenck were the largest supplier of flowers to New York City, all
+                 grown in 50 greenhouses on either side of Five Mile River in Norwalk and Darien.
+                 Traendly operated from about 1912 or so until the late 1950s. When they shut down
+                 the greenhouses they tried to sell this land to Sperry-Rand for a manufacturing
+                 facility, but their bruising 3-year attempt to re-zone the area was ultimately
+                 overturned due to fierce opposition from the local community.
+                 """
+    },
+    "geometry":{
+        "type":"Polygon",
+        "coordinates":[[
+            [-73.4490272, 41.0875292],
+            [-73.4480186, 41.0860844],
+            [-73.4470745, 41.0844886],
+            [-73.4471389, 41.0836368],
+            [-73.4467885, 41.082785],
+            [-73.4455618, 41.0832325],
+            [-73.4442922, 41.0840682],
+            [-73.4441992, 41.0849847],
+            [-73.4454581, 41.0864187],
+            [-73.4476611, 41.0879821],
+            [-73.4490272, 41.0875292]]]
+    },
 }]
 
 # Property key used to identify each feature
@@ -37,12 +70,25 @@ ID_FIELD = "ParcelID"
 
 # Define manual overrides of feature.properties, keyed by ParcelID
 EDITS = {
+    # 1 Westview
+    "5-73B-7-0": {
+        "Notes": f"""
+        Until the late 1970s the address of this house was 385 Flax Hill Rd.
+        """
+    },
     # 2 Westview
     "5-73B-19-0": {
         "Notes": f"""
         This house originally faced the opposite direction, and opened onto Flax
         Hill Road. In older directories the address of this house was 385 Flax Hill,
         and then 353 Flax Hill after the numbering was revised in about 1950.
+        """
+    },
+    # 3 Westview
+    "5-73B-11-0": {
+        "Notes": f"""
+        When the original owners of this house sold it in 1944, they referred to it
+        as "Spicewood".
         """
     },
     # 4 Westview
@@ -68,6 +114,14 @@ EDITS = {
         daughter Catherine, and then later by their son Nelson. Nelson Lagerin was a radio
         technician with the Norwalk Traffic and Parking Department. After Nelson died the
         house was rebuilt in 1994.
+        """
+    },
+    # 8 Westview
+    "5-73B-15-0": {
+        "Notes": f"""
+        When the original owners of this house held a housewarming party in October 1940,
+        long before houses on Westview were reliably numbered, they referred to the house
+        as "Fernwood".
         """
     },
     # 14 Westview
@@ -112,6 +166,17 @@ EDITS = {
         "YearBuilt": 1979,
         "Notes": f"""
         This house was apparently rebuilt in 2006.
+        """
+    },
+    # 21 Westview
+    "5-73A-35-0": {
+        "Notes": f"""
+        In the 1970s this was the home of John and Grace Devlin. John C. Devlin was an
+        author and a reporter at The New York Times, focusing on nature and conservation.
+        Grace was also an author and a consulting editor at Reader's Digest. She was
+        known professionally as Grace Akin Naismith. Naismith was the name of her first
+        husband; Grace's former <a href="https://en.wikipedia.org/wiki/James_Naismith">
+        father-in-law invented basketball</a>.
         """
     },
     # 23 Westview
@@ -222,6 +287,13 @@ EDITS = {
         in theaters, and his wife Aimee Green Hall.
         """
     },
+    # Wetlands along Keeler Ave
+    "5-73B-2-0": {
+        "Notes": f"""
+        This area was acquired by the Connecticut Light & Power Company in 1935 from the Hain
+        Brothers: Otto, Fred and Louis. Louis Hain lived next door at 4 Keeler Ave.
+        """
+    },
     # 398 Flax Hill Rd
     "5-78-2-0": {
         "Notes": f"""
@@ -306,6 +378,13 @@ EDITS = {
         High School. The 100-year-old house was moved across the street to its present location.
         """
     },
+    # 318 Highland Ave
+    "5-81-94-0": {
+        "Notes": f"""
+        In the 1920s, before there were reliable house numbers on this stretch of Highland,
+        the owners of this home referred to it as "Locust Knoll".
+        """
+    },
     # 354 Highland Ave
     "5-81-1-0": {
         "Notes": f"""
@@ -336,6 +415,16 @@ EDITS = {
         Farms was originally on Scribner, and was consumed by the construction of I-95. The
         business was taken over by an employee and moved to the present location.
         """,
+    },
+    # 11 Sheffield Ave
+    "6-28C-6-0": {
+        "Notes": f"""
+        This was the home of William P. and Sarah Tristram. William was the Sexton and
+        Groundskeeper for the newly-opened Rowayton Union Cemetery. William's father lived
+        across the Five Mile River in Darien, and his brother Josiah lived at 378 Flax Hill
+        Rd. <a href="https://www.historicrowayton.org/11-sheffield-avenue">Historic Rowayton
+          has more of the story of William & Sarah</a>.
+        """
     },
     # Rowayton Woods. This is the survivor of de-duplication, so we want it to represent
     # the whole development.
