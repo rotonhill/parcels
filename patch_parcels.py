@@ -10,6 +10,8 @@ ADDED_FEATURES = [{
         "valid_from": 1922,
         "valid_to": 1957,
         "Location":"Original Reynolds Farms and Distillery",
+        "StreetName": "Scribner",
+        "StreetNum": "76",
         "Notes": f"""
         This was approximately the original site of the Reynolds Farms Nursery. The
         Reynolds family also operated a cider mill and distillery here. After the repeal
@@ -39,6 +41,8 @@ ADDED_FEATURES = [{
         "valid_from": 1912,
         "valid_to": 1960,
         "Location": "Traendly & Schenck Greenhouses",
+        "StreetName": "Flax Hill Rd",
+        "StreetNum": "466",
         "Notes": f"""
                  Traendly & Schenck were the largest supplier of flowers to New York City, all
                  grown in 50 greenhouses on either side of Five Mile River in Norwalk and Darien.
@@ -189,6 +193,13 @@ EDITS = {
         features.
         """
     },
+    # 310 Flax Hill Rd
+    "5-77-4-0": {
+        "Notes": f"""
+        This house has a Norwalk Historical Society plaque that reads "Samuel W Semple
+        House, c 1891".
+        """
+    },
     # 319 Flax Hill Rd
     "5-76B-5-0": {
         "YearBuilt": 1770,
@@ -198,6 +209,43 @@ EDITS = {
         <a href="https://www.thehour.com/news/article/Historic-1770s-era-home-on-Flax-Hill-Road-torn-10934471.php">
         this article in the The Norwalk Hour</a> for the story, along with excellent photos of the
         original house.
+        """
+    },
+    # 322 Flax Hill Rd
+    "5-77-137-0": {
+        "Notes": f"""
+        This was the home of John Fodor (~1866-1932). Fodor was a Hungarian immigrant who
+        came to this country in 1886, and owned this property by at least 1900. His wife and
+        children lived here almost all of the 1900s. In the 1990s, their farm became a municipal
+        open space.<p>
+        """
+    },
+    # 328 Flax Hill Rd
+    "5-77-138-0": {
+        "Notes": f"""
+        Although the parcel data says this house was built in 1903, the history of this
+        house goes back to about 1810, when it was constructed by
+        <a href="https://en.wikipedia.org/wiki/Eliphalet_Lockwood">Eliphalet Lockwood.</a><p>
+        A city history says that Lockwood sold the place to Nehemiah Hanford, who also
+        appears on a historical marker down the road at 347 Flax Hill Rd.<p>
+        In the 1930s this was the address of the Norwalk Rug Cleaners, a venture of
+        Joseph Fodor.<p>
+        The building is now the home of the <a href="https://norwalkpreservation.org/">
+        Norwalk Preservation Trust</a>, among other related organizations.
+        """
+    },
+    # 330 Flax Hill Rd (roughly)
+    "5-77-5-0": {
+        "Location": "Fodor Farm",
+        "Notes": f"""
+        This area was for hundreds of years a working farm, with orchards and animals and
+        small-scale horticulture. In that way, it was exactly like all the surrounding
+        area. What sets this particular plot apart is that it was the <i>last</i> remaining
+        section in this neighborhood that hadn't already been subdivided and developed.<p>
+        So when the Fodor family sold the land in the 1990s with the intention of putting
+        up 50+ homes, just like everyone else had been doing for decades, there was a
+        grassroots effort to preserve the property as open space. Eventually the city
+        acquired the land and created a durable open space for the community.
         """
     },
     # 341 Flax Hill Rd
@@ -238,7 +286,9 @@ EDITS = {
         lived here in the 1860s.<p>
         Alexander and Maria Rummler lived here in the early 1900s. Alexander was an artist
         and sat on the Board of Education. Maria was the first woman elected to the Norwalk
-        City Council.
+        City Council.<p>
+        There's a second historical plaque on this property, on another building behind
+        the main house, that reads "Nehemiah Hanford House c1780".
         """
     },
     # 378 Flax Hill Rd
@@ -252,6 +302,7 @@ EDITS = {
         Rowayton rural route. He lived here until the early 1920s.
         """
     },
+    # 384 Flax Hill Rd
     "5-78-4-0": {
         "Notes": f"""
         In the 1930s and 1940s, this was the home of Calvin Ira Crocker (1875-1951). Crocker
@@ -317,7 +368,22 @@ EDITS = {
         1960s he remodeled the building, keeping its character but giving it a new life as a
         residence.
         """
-    }, 
+    },
+    # 521 Flax Hill Rd
+    "5-71-6A-0": {
+        "Notes": f"""
+        This house has a Norwalk Historical Society plaque that reads "Samuel Richards IV
+        House c. 1815".
+        """
+    },
+    # 537 Flax Hill Rd
+    "5-71-8-0": {
+        "Notes": f"""
+        This house has a Norwalk Historical Society plaque that reads "Reed House c. 1790".
+        The parcel data says that the place was built in 1900, so I'm not sure how to
+        reconcile that.
+        """
+    },
     # 51 Rampart Rd
     "5-73A-14-0": {
         "Notes": f"""
@@ -360,10 +426,18 @@ EDITS = {
         Heinrich Schulte was brutally murdered.</a>.
         """
     },
+    # 287 Highland Ave
+    "5-80-28-0": {
+        "Notes": f"""
+        This house has a Norwalk Historical Society plaque that's a little hard to read,
+        but I think it says "Nathan Brown House", and has the dates 1790 and 1840.
+        """
+    },
     # 297 Highland Ave
     "5-80-30-0": {
         "Notes": f"""
-        This home was built by Ira Ford Hoyt (1824-1887), who was a lumber dealer and builder.
+        This house has a Norwalk Historical Society plaque that reads "Ira Ford Hoyt House,
+        c. 1859". It was built by Ira Ford Hoyt (1824-1887), who was a lumber dealer and builder.
         His mother Hannah Smith Hoyt lived up the street in 354 Highland Ave, and his
         namesake Captain Ira Ford lived in 347 Flax Hill Rd.<p>
         Ira's son Dudley Ely Hoyt (1866-1921) eventually took over the house. He was also a builder,
@@ -397,6 +471,16 @@ EDITS = {
         Aaron and Hannah are buried in the tiny Hoyt-Bouton Cemetery on Witch Lane.
         """,
     },
+    # 11 Keeler Ave
+    "5-72-19-0": {
+        "Notes": f"""
+        This house has a Norwalk Historical Society plaque that reads "George & Mary Smith
+        House – c. 1840". Mary Esther Hoyt Smith (1807-1898) was the daughter of Polly
+        Waring Hoyt (1779-1882) who lived up the road.<p>
+        Note that the parcel data says this house was built in 1891, not 1840. Was it
+        perhaps rebuilt?
+        """,
+    },
     # 26 Keeler Ave
     "5-73B-1A-0": {
         "Notes": f"""
@@ -404,6 +488,17 @@ EDITS = {
         Lewis Raymond Jr. was a brickmason, and this is accordingly a brick house. In fact,
         it is generally regarded as the first brick house built in Norwalk. Lewis Raymond Sr
         lived nearby at 388 Flax Hill Rd, according to the plaque on that house.
+        """
+    },
+    # 2 Richards Ave
+    "5-72-27-0": {
+        "Notes": f"""
+        This house has a Norwalk Historical Society plaque that reads "Captain Eli Reed
+        House c. 1780".<p>
+        According to the 1851, 1858 and 1867 maps, this was the house of J. Lockwood,
+        who I think was Jacob Lockwood, the brother of Sally Ann Keeler. But there's
+        also a marker on 28 Richards Ave that says it's the Jacob Lockwood Homestead
+        in 1842. Perhaps he moved?
         """
     },
     # 23 Richards Ave
@@ -416,6 +511,55 @@ EDITS = {
         business was taken over by an employee and moved to the present location.
         """,
     },
+    # 26 Richards Ave
+    "5-72-48-0": {
+        "Notes": f"""
+        This house has a plaque that reads "Keeler Avenue Homestead, 1804". Note that it's not
+        a Norwalk Historical Society plaque.
+        """
+    },
+    # 28 Richards Ave
+    "5-72-25-0": {
+        "Notes": f"""
+        There is a plaque on this house that reads "Jacob Lockwood Homestead 1842". Jacob
+        Lockwood (1794-1863) was the son of David Lockwood (1767-1835). When his father
+        died he inherited considerable property in this area, as did his sister Sally Ann
+        Keeler (1804-1874).<p>
+        Maps from 1851 to 1867 appear to show a J. Lockwood living 2 Richards Ave, so he
+        may have moved down the road a bit.
+        """
+    },
+    # 286 Rowayton Ave
+    "6-31-16-0": {
+        "Notes": f"""
+        There is a historical plaque on this house that reads "The George W. Bryan House c. 1887".
+        """
+    },
+    # 290 Rowayton Ave
+    "6-31-17-0": {
+        "Notes": f"""
+        There is a historical plaque on this house that reads "The Ephraim Thomes House c. 1887".
+        """
+    },
+    # 299 Rowayton Ave
+    "6-26-20-0": {
+        "Notes": f"""
+        There is a historical plaque on this house that reads "The Traendly &
+        Schenck House Built c1900 Moved c1932".
+        """
+    },
+    # 337 Rowayton Ave
+    "6-27-24-0": { 
+        "Notes": f"""
+        There is a historical plaque on this house that reads "The Cyrus & Polly Fitch House c. 1812".
+        """
+    },
+    # 362 Rowayton Ave
+    "6-28-2-0": {
+        "Notes": f"""
+        There is a historical plaque on this house that reads "Noyes Mather House c. 1790".
+        """
+    },
     # 11 Sheffield Ave
     "6-28C-6-0": {
         "Notes": f"""
@@ -423,7 +567,16 @@ EDITS = {
         Groundskeeper for the newly-opened Rowayton Union Cemetery. William's father lived
         across the Five Mile River in Darien, and his brother Josiah lived at 378 Flax Hill
         Rd. <a href="https://www.historicrowayton.org/11-sheffield-avenue">Historic Rowayton
-          has more of the story of William & Sarah</a>.
+        has more of the story of William & Sarah</a>.
+        """
+    },
+    # 6 Charcoal Rd
+    "5-81-253-0": {
+        "Notes": f"""
+        There's a chance that this was the home of George Hoyt in the 1860s, and therefore
+        the house that Johan Heinrich Schulte purchased shortly before he was
+        <a href="https://www.rotonhill.com/the-case-of-the-miserly-millionaire">murdered
+        in the nearby woods in 1878.</a>
         """
     },
     # Rowayton Woods. This is the survivor of de-duplication, so we want it to represent

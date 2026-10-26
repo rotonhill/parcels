@@ -151,7 +151,7 @@ def main():
     sys.stderr.write(f"Features within bounds: {len(in_bounds_features)}\n")
 
     # Keep only the properties you actually use in the map
-    keys_to_keep = {"YearBuilt", "NAME", "ParcelID", "Location"}
+    keys_to_keep = {"YearBuilt", "NAME", "ParcelID", "Location", "StreetName", "StreetNum"}
     for f in in_bounds_features:
         f["properties"] = {k: v for k, v in f["properties"].items() if k in keys_to_keep}
 
@@ -167,7 +167,7 @@ def main():
     final_features = [
         f for f in final_features if
         str((f.get("properties") or {}).get("ParcelID", "")).strip() not in EXCLUDED_PARCEL_IDS]
-    
+
     # Fill in some properties by default
     for feat in final_features:
         props = feat.setdefault("properties", {})

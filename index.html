@@ -283,7 +283,8 @@
         <li><strong>Parcels:</strong> Lots appear only after they're established. In some
           cases I'm aware of of a subdivision, so I show that as well.</li>
         <li><strong>Details:</strong> Click on any parcel to see a little more information.
-          If a parcel has a thicker outline, there is some historical trivia available.
+          If a parcel has a thicker outline, there is some historical trivia available. You
+          can see all the notes <a href="notes.html">here</a>.
           </li>
       </ul>
       <button id="closeHelpBtn" class="modal-close-btn">Got it</button>
@@ -326,15 +327,15 @@
         }
         if (props.Notes) {
           return {
-            fillOpacity: 0.50,
+            fillOpacity: 0.60,
             fillColor: 'slateblue',
             opacity: 1,
             color: 'blue',
-            weight: 1.5,
+            weight: 2,
           };
         } else {
           return {
-            fillOpacity: 0.50,
+            fillOpacity: 0.40,
             fillColor: 'slateblue',
             opacity: 1,
             color: 'slateblue',
