@@ -67,6 +67,40 @@ ADDED_FEATURES = [{
             [-73.4476611, 41.0879821],
             [-73.4490272, 41.0875292]]]
     },
+},
+{
+    "type":"Feature",
+    "properties": {
+        "ParcelID":"HadikField",
+        "YearBuilt": 1922,
+        "valid_from": 1922,
+        "valid_to": 1927,
+        "Location": "Hadik Field",
+        "StreetName": "HADIK PARKWAY",
+        "StreetNum": "1",
+        "Notes": f"""
+        In 1922 Joseph Hadik built a baseball field here, complete with a 600-person grandstand.
+        This was the home field of the Springwoods, who played City League rivals Wiltons, the
+        Knights of Columbus, and the Lockwoods. Games sometimes attracted 3,000 spectators.
+        One memorable exhibition involving local boy
+        <a href="https://www.thehour.com/sports/article/Yesterday-s-Stars-Norwalk-s-Ole-Olsen-once-8169443.php">
+        Art 'Ole' Olsen</a>, then with the Detroit Tigers, drew a crowd of 5,000.<p>
+        The facility also hosted football, amateur boxing, and fireworks shows.<p>
+        The field had a short life, however, because Hadik began developing houses on the site.
+        Hadik was an aviation enthusiast and one of the developers of the Norwalk Airport on
+        West Rocks Rd. He named nearby Aviation Court to reflect his interest in aviation, not,
+        as is sometimes believed, because there was ever meant to be an airfield on this site.
+        """
+    },
+    "geometry":{
+        "type":"Polygon",
+        "coordinates":[[
+            [-73.4343829, 41.0917287],
+            [-73.4336641, 41.0906613],
+            [-73.4326037, 41.0912476],
+            [-73.4331938, 41.0922165],
+            [-73.4343829, 41.0917287]]]
+    }
 }]
 
 # Property key used to identify each feature
@@ -578,6 +612,20 @@ EDITS = {
         <a href="https://www.rotonhill.com/the-case-of-the-miserly-millionaire">murdered
         in the nearby woods in 1878.</a>
         """
+    },
+    # 2 Hadik Parkway
+    "5-77-56-A/1": {
+        "Location": "2 Hadik Parkway, and Hadik Hall",
+        "Notes": f"""
+        From the 1950s to the 1980s, there was a community center here called Hadik
+        Hall. Hadik Hall hosted wedding receptions, dances, socials, club and political
+        meetings, dinners, and in 1952 the annual Fairfield County Rabbit Breeders Show.
+        Neighbors routinely complained of traffic and trash left behind after these
+        events.<p>
+        In the early 1980s the hall was replaced by the current townhouses.
+        """,
+        "YearBuilt": 1950,
+        "valid_from": 1950,
     },
     # Rowayton Woods. This is the survivor of de-duplication, so we want it to represent
     # the whole development.
