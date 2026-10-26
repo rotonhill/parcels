@@ -365,33 +365,6 @@
       }
     }
 
-    function formatAddress(str) {
-        if (!str) return '';
-
-        // Canonical mapping for standard street abbreviations & directionals
-        const standardSuffixes = {
-          st: 'St', ave: 'Ave', rd: 'Rd', ln: 'Ln', dr: 'Dr', ct: 'Ct',
-          pl: 'Pl', blvd: 'Blvd', way: 'Way', ter: 'Ter', cir: 'Cir',
-          pkwy: 'Pkwy', hwy: 'Hwy',
-          // Directionals (keep uppercase)
-          n: 'N', s: 'S', e: 'E', w: 'W',
-          ne: 'NE', nw: 'NW', se: 'SE', sw: 'SW'
-        };
-
-        return str
-          .toLowerCase()
-          .split(/\s+/)
-          .map(word => {
-            // Check if the word is a known suffix or directional
-            if (standardSuffixes[word]) {
-              return standardSuffixes[word];
-            }
-            // Standard title case: capitalize first letter, handle hyphens if any
-            return word.replace(/(?:^|-)([a-z])/g, (_, letter) => letter.toUpperCase());
-          })
-          .join(' ');
-      }
-
     function refreshParcels() {
       if (geojsonLayer) {
         map.removeLayer(geojsonLayer);
@@ -404,10 +377,10 @@
 
         const yr = props.YearBuilt ? `<br>Year Built: ${props.YearBuilt}` : '';
         const lotId = props.ParcelID ? `<br>Parcel ${props.ParcelID}` : '';
-        const location = formatAddress(props.Location);
+        const location = props.Location ? `<strong>${props.Location}</strong>` : '';
         const notes = props.Notes ? `<br><br>${props.Notes}` : '';
 
-        layer.bindPopup(`<strong>${location}</strong>${yr}${lotId}${notes}`);
+        layer.bindPopup(`${location}${yr}${lotId}${notes}`);
       }
       }).addTo(map);
     }

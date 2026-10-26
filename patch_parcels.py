@@ -475,11 +475,12 @@ EDITS = {
         His mother Hannah Smith Hoyt lived up the street in 354 Highland Ave, and his
         namesake Captain Ira Ford lived in 347 Flax Hill Rd.<p>
         Ira's son Dudley Ely Hoyt (1866-1921) eventually took over the house. He was also a builder,
-        who among other things built the original Norwalk Yacht Club building. Dudley must have
-        named after Dudley Pettibone Ely, the first mayor of South Norwalk.<p>
-        Dudley had a
-        daughter named Margaret Rachel Hoyt (1905-2001), later known as Margaret Hoyt Smith.
-        Margaret became the first female architect in Norwalk. She designed a part of
+        who among other things built the original Norwalk Yacht Club building. In 1907 Dudley and
+        some colleagues proposed building a trolley line between South Norwalk and Darien, over
+        Roton Hill. Dudley must have named after Dudley Pettibone Ely, the first mayor of South
+        Norwalk.<p>
+        Dudley had a daughter named Margaret Rachel Hoyt (1905-2001), later known as Margaret
+        Hoyt Smith. Margaret became the first female architect in Norwalk. She designed a part of
         the cap of the Chrysler building, the Norwalk Historical Society Museum, and a number of
         houses in Rowayton. Margaret took over the family home from her parents and raised her
         children there. In 1959 she sold the land to the city so it could build Brien McMahon
@@ -634,13 +635,24 @@ EDITS = {
     },
     "5-79-3-0": {
         "Location": "Brookside Cemetery",
+        "StreetName": "ROWAYTON AVE",
+        "StreetNum": 409,
+        "Notes": f"""
+        This cemetery operated between approximatey 1724 and 1867, when it was replaced
+        by the Rowayton Union Cemetery down the road.
+        """,
         "valid_from": 1724,
         "YearBuilt": 1724,
     },
     "5-79-1-0": {
         "Location": "Union Cemetery",
+        "StreetName": "ROWAYTON AVE",
+        "StreetNum": 381,
         "valid_from": 1849,
         "YearBuilt": 1849,
+        "Notes": f"""
+        Rowayton Union Cemetery was established in 1849.
+        """,
     },
 }
 

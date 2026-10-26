@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 from shapely import wkt
 from shapely.geometry import shape
@@ -44,6 +45,69 @@ def parcel_in_bounds(feature, region):
     if region.intersects(parcel_shape):
         return True
     return False
+
+# Standard USPS street suffixes, units, and directionals
+STANDARD_SUFFIXES = {
+    # Street types
+    "st": "St", "ave": "Ave", "rd": "Rd", "ln": "Ln",
+    "dr": "Dr", "ct": "Ct", "pl": "Pl", "blvd": "Blvd",
+    "way": "Way", "ter": "Ter", "cir": "Cir", "pkwy": "Pkwy",
+    "hwy": "Hwy", "aly": "Aly", "row": "Row", "loop": "Loop",
+    # Secondary units
+    "apt": "Apt", "ste": "Ste", "unit": "Unit", "fl": "Fl",
+    "rm": "Rm", "dept": "Dept", "bldg": "Bldg",
+    # Directionals (uppercase)
+    "n": "N", "s": "S", "e": "E", "w": "W",
+    "ne": "NE", "nw": "NW", "se": "SE", "sw": "SW",
+}
+
+# Regex to isolate leading/trailing punctuation around the core alphanumeric token
+TOKEN_PATTERN = re.compile(r"^([^\w]*)(.*?)([^\w]*)$", re.UNICODE)
+
+# Regex to detect ordinals like 1st, 2nd, 3rd, 4th
+ORDINAL_PATTERN = re.compile(r"^\d+(st|nd|rd|th)$", re.IGNORECASE)
+
+# Regex to capitalize letters at the start of words or after hyphens/slashes
+CAPITALIZE_PATTERN = re.compile(r"(?:^|[\/\-])([a-z])")
+
+
+def format_address(address_str: str) -> str:
+    if not address_str or not isinstance(address_str, str):
+        return ""
+
+    tokens = address_str.strip().split()
+    formatted_tokens = []
+
+    for token in tokens:
+        match = TOKEN_PATTERN.match(token)
+        if not match:
+            formatted_tokens.append(token)
+            continue
+
+        leading_punct, core, trailing_punct = match.groups()
+        if not core:
+            formatted_tokens.append(token)
+            continue
+
+        lower_core = core.lower()
+
+        # 1. Known suffix / directional lookup
+        if lower_core in STANDARD_SUFFIXES:
+            cased_core = STANDARD_SUFFIXES[lower_core]
+
+        # 2. Preserve ordinal numbers: 1st, 2nd, 3rd -> keep ordinal lowercase
+        elif ORDINAL_PATTERN.match(lower_core):
+            cased_core = lower_core
+
+        # 3. Standard title case (handles hyphens like "Winston-Salem" or slashes)
+        else:
+            cased_core = CAPITALIZE_PATTERN.sub(
+                lambda m: m.group(0).upper(), lower_core
+            )
+
+        formatted_tokens.append(f"{leading_punct}{cased_core}{trailing_punct}")
+
+    return " ".join(formatted_tokens)
 
 def get_year_built(feature):
     """
@@ -173,6 +237,13 @@ def main():
         props = feat.setdefault("properties", {})
         year = get_year_built(feat)
         props["valid_from"] = year if year > 0 else None
+
+    # Format the street name properly
+    for f in final_features:
+        props = f.setdefault("properties", {})
+        location = props.get("Location")
+        if location:
+            props["Location"] = format_address(location)
 
     sys.stderr.write(f"Features after deduplicating shared outlines: {len(final_features)}\n")
     sys.stderr.write(f"Removed {len(in_bounds_features) - len(final_features)} duplicate condo/sub-unit polygons.\n")
