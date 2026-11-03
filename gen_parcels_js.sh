@@ -13,3 +13,4 @@ cat Parcels_Norwalk_CT.geojson | \
 	python3 localize-parcels.py | \
 	python3 patch_parcels.py | \
 	python3 gen_notes_html.py > notes.html
+

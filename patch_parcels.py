@@ -628,6 +628,17 @@ EDITS = {
         "YearBuilt": 1950,
         "valid_from": 1950,
     },
+    # 45 Soundview Ave
+    "5-77-135-0": {
+        "YearBuilt": 1927,
+        "valid_from": 1927,
+        "Notes": f"""
+        From the late 1920s to at least 1976, this was the location of Kery's Radio (and
+        later TV) Repair. Frank Kery was already known as Norwalk's "Radio Doctor" by 1927.
+        At the same location was Kery's Service Station, repairing cars and selling gas.
+        The Kery family lived nearby at 9 Pogany St.
+        """
+    },
     # Rowayton Woods. This is the survivor of de-duplication, so we want it to represent
     # the whole development.
     "5-80-200-1/01": {
