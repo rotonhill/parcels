@@ -74,7 +74,7 @@ ADDED_FEATURES = [{
         "ParcelID":"HadikField",
         "YearBuilt": 1922,
         "valid_from": 1922,
-        "valid_to": 1927,
+        "valid_to": 1926,
         "Location": "Hadik Field",
         "StreetName": "HADIK PARKWAY",
         "StreetNum": "1",
@@ -95,11 +95,16 @@ ADDED_FEATURES = [{
     "geometry":{
         "type":"Polygon",
         "coordinates":[[
-            [-73.4343829, 41.0917287],
-            [-73.4336641, 41.0906613],
-            [-73.4326037, 41.0912476],
-            [-73.4331938, 41.0922165],
-            [-73.4343829, 41.0917287]]]
+            [-73.4341777, 41.0918379],
+            [-73.4330218, 41.0905128],
+            [-73.4326111, 41.0907245],
+            [-73.4318746, 41.091002],
+            [-73.4315147, 41.0912173],
+            [-73.4322014, 41.0916909],
+            [-73.4327986, 41.0916269],
+            [-73.4331498, 41.0922507],
+            [-73.4334204, 41.0921791],
+            [-73.4341777, 41.0918379]]]
     }
 }]
 
@@ -450,6 +455,12 @@ EDITS = {
         "valid_from": 1913,
         "YearBuilt": 1913,
     },
+    # 188 Highland Ave
+    "5-82-88-0": {
+        "Notes": f"""
+        This house has a historical plaque that reads "The Thomas Farmhouse c. 1880".
+        """
+    },
     # 284 Highland Ave
     "5-81-157-0": {
         "Notes": f"""
@@ -472,19 +483,23 @@ EDITS = {
         "Notes": f"""
         This house has a Norwalk Historical Society plaque that reads "Ira Ford Hoyt House,
         c. 1859". It was built by Ira Ford Hoyt (1824-1887), who was a lumber dealer and builder.
-        His mother Hannah Smith Hoyt lived up the street in 354 Highland Ave, and his
-        namesake Captain Ira Ford lived in 347 Flax Hill Rd.<p>
+        His mother Hannah Smith Hoyt <a href="index.html?parcel=5-81-1-0">lived up the street</a>,
+        as did his namesake <a href="index.html?parcel=5-73B-20-0">Captain Ira Ford</a>.<p>
         Ira's son Dudley Ely Hoyt (1866-1921) eventually took over the house. He was also a builder,
         who among other things built the original Norwalk Yacht Club building. In 1907 Dudley and
         some colleagues proposed building a trolley line between South Norwalk and Darien, over
         Roton Hill. Dudley must have named after Dudley Pettibone Ely, the first mayor of South
         Norwalk.<p>
-        Dudley had a daughter named Margaret Rachel Hoyt (1905-2001), later known as Margaret
-        Hoyt Smith. Margaret became the first female architect in Norwalk. She designed a part of
-        the cap of the Chrysler building, the Norwalk Historical Society Museum, and a number of
-        houses in Rowayton. Margaret took over the family home from her parents and raised her
-        children there. In 1959 she sold the land to the city so it could build Brien McMahon
-        High School. The 100-year-old house was moved across the street to its present location.
+        Dudley had a daughter named Margaret Hoyt Smith (1905-2001), who was the first female
+        architect in Norwalk. She designed the Norwalk Historical Society Museum, among other
+        things. Margaret took over the family home and lived there until 1959, when she sold the
+        land to the city so it could build Brien McMahon High School. The 100-year-old house was
+        moved across the street to its present location.<p>
+        Another son of Ira Ford Hoyt was Ira Mortimer Hoyt (1854-1923), the proprietor of
+        <a href="https://historicbuildingsct.com/hoyts-theatre-1892/">Hoyt's Theater in South
+        Norwalk</a>, plus many other theaters. Mortimer's son Clegg Hoyt was an actor who
+        among many other roles had a small part in the Star Trek pilot
+        (<a href="https://www.imdb.com/name/nm0398455/?ref_=ext_shr_lnk">IMDb</a>).
         """
     },
     # 318 Highland Ave
@@ -595,6 +610,12 @@ EDITS = {
         There is a historical plaque on this house that reads "Noyes Mather House c. 1790".
         """
     },
+    # 374 Rowayton Ave
+    "6-28C-22-0": {
+        "Notes": f"""
+        This house has a historical plaque that reads "The Julius and Bessie L. West House c. 1924".
+        """
+    },
     # 11 Sheffield Ave
     "6-28C-6-0": {
         "Notes": f"""
@@ -637,6 +658,14 @@ EDITS = {
         later TV) Repair. Frank Kery was already known as Norwalk's "Radio Doctor" by 1927.
         At the same location was Kery's Service Station, repairing cars and selling gas.
         The Kery family lived nearby at 9 Pogany St.
+        """
+    },
+    # 57 Soundview Ave
+    "5-77-54-0": {
+        "Notes": f"""
+        This was the home of Joseph Hadik, namesake of Hadik Parkway, and proprietor of
+        <a href="index.html?parcel=5-77-56-A/1&year=1950">Hadik Hall</a> and the earlier
+        <a href="index.html?parcel=HadikField&year=1922">Hadik Field</a>.
         """
     },
     # Rowayton Woods. This is the survivor of de-duplication, so we want it to represent
