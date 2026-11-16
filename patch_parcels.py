@@ -298,7 +298,9 @@ EDITS = {
         means 12 rooms in total, not just bedrooms. That house burned to the ground
         in 1912, and was replaced that year by William G Shaw. There's much more
         detail about all this in <a href="https://www.rotonhill.com/the-keeler-property">
-        The Keeler Property</a>.
+        The Keeler Property</a>.<p>
+        It appears that when this house was sold in 1918, it was called "Restawhile",
+        and sat on two acres.
         """
     },
     # 343 Flax Hill Rd
